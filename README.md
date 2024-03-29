@@ -1,1 +1,2 @@
 # StudentRegistryApp
+# GitHub Actions Trigger
