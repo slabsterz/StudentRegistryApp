@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NODE_VERSION = '21.7.1'
+        NODE_VERSION = 'New node'
         SERVICE_ID = 'render-service-id'
         RENDER_API_KEY = 'render-api-key'
     }
@@ -28,9 +28,9 @@ pipeline {
         stage('Run tests') {
             steps {
                 bat 'start /b npm run start'
-                bat 'wait-on http://localhost:8081'
+                bat 'wait-on http://localhost:8080'
                 bat 'npm test'
-                bat 'kill-port 8081'
+                bat 'kill-port 8080'
             }
         }
     }
